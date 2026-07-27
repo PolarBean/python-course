@@ -18,6 +18,19 @@ describe("exercise validation", () => {
     expect(validateCodeSubmission(exercise!, "result = 1\nprint(result)", "12\n").passed).toBe(false);
   });
 
+  it("matches expected output case-insensitively", () => {
+    const exercise = courses
+      .flatMap((course) => course.lessons)
+      .map((lesson) => lesson.exercise)
+      .find((candidate) => candidate?.expectedOutputContains?.some((fragment) => /[a-z]/i.test(fragment)));
+    expect(exercise).toBeDefined();
+    const fragment = exercise!.expectedOutputContains!.find((f) => /[a-z]/i.test(f))!;
+    const flipped = [...fragment]
+      .map((char) => (char === char.toUpperCase() ? char.toLowerCase() : char.toUpperCase()))
+      .join("");
+    expect(validateCodeSubmission(exercise!, "", flipped).missingOutput).not.toContain(fragment);
+  });
+
   it("can require plotted output without showing the expected answer", () => {
     const challenge = courses
       .flatMap((course) => course.lessons)
