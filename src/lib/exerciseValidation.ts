@@ -11,7 +11,11 @@ export const validateCodeSubmission = (
 ): { passed: boolean; missing: string[]; missingCode: string[]; missingOutput: string[] } => {
   const expectedOutput = exercise.expectedOutputContains ?? [];
   const missingCode: string[] = [];
-  const missingOutput = expectedOutput.filter((fragment) => !output.includes(fragment));
+  // Convert to lowercase for case-insensitive comparison
+  const lowerOutput = output.toLowerCase();
+  const missingOutput = expectedOutput.filter(
+    (fragment) => !lowerOutput.includes(fragment.toLowerCase()),
+  );
   const missingPlot =
     exercise.expectedPlotCount && plotCount < exercise.expectedPlotCount
       ? [`${exercise.expectedPlotCount} plot${exercise.expectedPlotCount === 1 ? "" : "s"}`]

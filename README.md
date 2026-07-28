@@ -87,7 +87,7 @@ code("average-two-values", "Practice: Average Two Values", "Calculate and print 
 
 For code exercises:
 
-- `expectedOutputContains` checks for strings in the program output.
+- `expectedOutputContains` checks for strings in the program output (case-insensitive).
 - `expectedIncludes` checks that the submitted code includes important syntax or function names.
 - `packages` lists Pyodide packages to load, such as `["numpy"]` or `["pandas", "matplotlib"]`.
 - Use `expectedPlotCount` when the exercise should create plots.
