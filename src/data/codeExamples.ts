@@ -249,6 +249,17 @@ if age >= 10 and has_ticket:
 else:
     print('wait')`, "`and` is true only when both sides are true."),
       ];
+    case "simple-logical-operators-intro":
+      return [
+        example(`weekday = False
+print(not weekday)`, "`not` flips True to False, or False to True."),
+        example(`weekday = False
+weekend = True
+print(weekend or weekday)`, "`or` is True if one or both of the variables are True."),
+        example(`weekday = False
+weekend = True
+print(weekend and weekday)`, "`and` is True when both variables are True."),
+      ];
     case "membership-example":
       return [
         example(`tools = ['terminal', 'editor', 'notebook']

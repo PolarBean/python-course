@@ -96,6 +96,26 @@ export const pythonFoundations: Course = {
       "When code behaves strangely, inspect the type of the value.",
       "This is especially useful when values come from files, forms, or copied text."
     ], "Print the type of each existing variable.", "number_value = 100\nword_value = 'Dog'\nflag_value = False\n\n# Inspect each variable.\n", ["int", "str", "bool"], ["type", "print"], [], 20),
+    {
+      ...read("comparisons-booleans", "Comparisons and Booleans", "Comparisons produce `True` or `False`.", ["comparison", "Boolean"], [
+        "In Python we can compare different variables. Comparisons should generally be done on numbers.",
+        "Comparison operators include `<` (less than), `>` (greater than), `==` (equal), `!=` (not equal), `<=`, and `>=`.",
+        "A comparison returns a Boolean value: `True` or `False`.",
+        "These Boolean results are commonly used in `if` statements to decide which code to run."
+      ]),
+      images: [
+        { src: "/images/session3/slide29-01.png", alt: "Comparison operators listed with examples", caption: "Comparison operators compare two values and return True or False." },
+        { src: "/images/session3/slide31-01.png", alt: "Less than comparison: 3 < 5 returns True", caption: "`<` returns `True` when the left side is smaller." },
+        { src: "/images/session3/slide32-01.png", alt: "Greater than comparison: 5 > 3 returns True", caption: "`>` returns `True` when the left side is larger." },
+        { src: "/images/session3/slide33-01.png", alt: "Equality comparison: 5 == 5 returns True", caption: "`==` checks equality — note the double equals, not a single one." },
+      ],
+    },
+    read("simple-logical-operators-intro", "Logical Operators", "Combine or flip Boolean values with `not`, `and`, and `or`.", ["not", "and", "or", "booleans"], [
+      "`not` flips a Boolean value: `not True` becomes `False`, and `not False` becomes `True`.",
+      "`and` returns `True` only when both sides are true.",
+      "`or` returns `True` when at least one side is true.",
+      "Logical operators are useful when one decision depends on more than one condition."
+    ], 10),
     code("debug-with-print", "Debug with `print()`", "Print intermediate values to check your assumptions.", ["debugging", "print"], [
       "Printing is not only for final answers.",
       "A useful debugging habit is to print a value before and after a calculation.",

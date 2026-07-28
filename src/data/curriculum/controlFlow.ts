@@ -22,20 +22,6 @@ export const controlFlow: Course = {
       "Print inside the loop when debugging. Print after the loop when only the final result matters."
     ], "Use a loop to add each value in `numbers` into `total`, then print `total` after the loop.", "numbers = [1, 2, 3, 4]\ntotal = 0\n\n# Update total inside the loop, then print total after the loop.\nprint(total)\n", ["10"], ["for", "total", "print"], [], 20),
     {
-      ...read("comparisons-booleans", "Comparisons and Booleans", "Comparisons produce `True` or `False`.", ["comparison", "Boolean"], [
-        "In Python we can compare different variables. Comparisons should generally be done on numbers.",
-        "Comparison operators include `<` (less than), `>` (greater than), `==` (equal), `!=` (not equal), `<=`, and `>=`.",
-        "A comparison returns a Boolean value: `True` or `False`.",
-        "These Boolean results are commonly used in `if` statements to decide which code to run."
-      ]),
-      images: [
-        { src: "/images/session3/slide29-01.png", alt: "Comparison operators listed with examples", caption: "Comparison operators compare two values and return True or False." },
-        { src: "/images/session3/slide31-01.png", alt: "Less than comparison: 3 < 5 returns True", caption: "`<` returns `True` when the left side is smaller." },
-        { src: "/images/session3/slide32-01.png", alt: "Greater than comparison: 5 > 3 returns True", caption: "`>` returns `True` when the left side is larger." },
-        { src: "/images/session3/slide33-01.png", alt: "Equality comparison: 5 == 5 returns True", caption: "`==` checks equality — note the double equals, not a single one." },
-      ],
-    },
-    {
       ...read("if-elif-else-example", "If, Elif, Else", "Run different code depending on a condition.", ["if", "elif", "else"], [
         "If statements take a Boolean value and run the indented code only when that value is `True`.",
         "Use `elif` to check a second condition if the first was false. Use `else` to run code when no condition matched.",
@@ -46,7 +32,8 @@ export const controlFlow: Course = {
     code("if-elif-else", "Practice: If, Elif, Else", "Run different code depending on a condition.", ["if", "elif", "else"], [
       "Now solve a similar task yourself. The practice checks the output."
     ], "Use `if`, `elif`, and `else` to choose what to print from the value stored in `light`.", "light = 'green'\n\n# Choose the message that matches the current light.\n", ["move"], ["if", "print"], [], 20),
-    read("logical-operators-example", "Logical Operators", "Combine or flip Boolean values with `not`, `and`, and `or`.", ["not", "and", "or", "booleans"], [
+    read("logical-operators-example", "Logical Operators in conditionals", "Combine or flip Boolean values with `not`, `and`, and `or`.", ["not", "and", "or", "booleans"], [
+      " Reminder: ",
       "`not` flips a Boolean value: `not True` becomes `False`, and `not False` becomes `True`.",
       "`and` returns `True` only when both sides are true.",
       "`or` returns `True` when at least one side is true.",
@@ -62,6 +49,32 @@ export const controlFlow: Course = {
       "When `outside_mode` is `True`, flip the result — return `True` when `n` is outside that range.",
       "Original CodingBat problem: [CodingBat](https://codingbat.com/prob/p158497)."
     ], "Define `in1to10(n, outside_mode)` matching the description.", "def in1to10(n, outside_mode):\n    # Handle the normal case and the outside-mode case.\n    pass\n\nprint([in1to10(5, False), in1to10(11, False), in1to10(11, True), in1to10(5, True)])\n", ["[True, False, True, False]"], ["def in1to10", "return", "print"], [], 20),
+    code("relu-exercise", "The `relu` Function", "Write a real-world function used in machine learning.", ["functions", "if", "return"], [
+      "A rectified linear unit (relu) returns the input if it is positive, and `0` otherwise.",
+      "This function is used as an activation function in neural networks.",
+      "It is a good example of a function that takes one argument and returns one value."
+    ], "Write `relu(x)` so it returns `x` when positive and `0` otherwise. Print `relu(5)`, `relu(0)`, and `relu(-3)`.", "def relu(x):\n    # Return x if positive, 0 otherwise.\n    pass\n\nprint(relu(5))\nprint(relu(0))\nprint(relu(-3))\n", ["5", "0", "0"], ["def", "return", "print"], [], 25),
+    code("cb-sum-double", "Practice: `sum_double`", "Return a value that depends on a condition.", ["functions", "if", "return"], [
+      "Normally `sum_double(a, b)` returns `a + b`.",
+      "If the two values are equal, the function returns double their sum.",
+      "Original CodingBat problem: [CodingBat](https://codingbat.com/prob/p141905)."
+    ], "Define `sum_double(a, b)` so it returns `a + b`, but doubles the sum when `a == b`.", "def sum_double(a, b):\n    # Return a + b, but double the result if they are equal.\n    pass\n\nprint([sum_double(1, 2), sum_double(3, 2), sum_double(2, 2)])\n", ["[3, 5, 8]"], ["def sum_double", "return", "print"], [], 20),
+    code("cb-diff21", "Practice: `diff21`", "Use `abs` and a conditional return.", ["functions", "abs", "if"], [
+      "`diff21(n)` returns the absolute difference between `n` and `21`.",
+      "If `n` is greater than `21`, the function returns double that difference.",
+      "Original CodingBat problem: [CodingBat](https://codingbat.com/prob/p197466)."
+    ], "Define `diff21(n)` so it returns `abs(n - 21)`, doubled when `n > 21`.", "def diff21(n):\n    # Return abs(n - 21), doubled when n > 21.\n    pass\n\nprint([diff21(19), diff21(10), diff21(21), diff21(25)])\n", ["[2, 11, 0, 8]"], ["def diff21", "return", "print"], [], 20),
+    code("cb-same-first-last", "Practice: `same_first_last`", "Guard a length check before indexing.", ["functions", "lists", "len"], [
+      "Write `same_first_last(nums)` that returns `True` when the list is non-empty and the first element equals the last.",
+      "Check `len(nums) >= 1` first to avoid an IndexError on an empty list.",
+      "Original CodingBat problem: [CodingBat](https://codingbat.com/prob/p179078)."
+    ], "Define `same_first_last(nums)` matching the description.", "def same_first_last(nums):\n    # Return False for empty lists, otherwise compare first and last.\n    pass\n\nprint([same_first_last([1, 2, 3]), same_first_last([1, 2, 3, 1]), same_first_last([1]), same_first_last([])])\n", ["[False, True, True, False]"], ["def same_first_last", "return", "print"], [], 20),
+    code("cb-common-end", "Practice: `common_end`", "Combine list indexing across two lists in a function.", ["functions", "lists", "indexing"], [
+      "Write `common_end(a, b)` that returns `True` when `a` and `b` share the same first element, or the same last element.",
+      "Both lists are guaranteed to have at least one element — check the two ends with separate `if` statements.",
+      "Original CodingBat problem: [CodingBat](https://codingbat.com/prob/p147755)."
+    ], "Define `common_end(a, b)` matching the description.", "def common_end(a, b):\n    # Compare the two possible matching ends.\n    pass\n\nprint([common_end([1, 2, 3], [7, 3]), common_end([1, 2, 3], [7, 3, 2]), common_end([1, 2], [1, 3])])\n", ["[True, False, True]"], ["def common_end", "return", "print"], [], 20),
+  
     {
       ...read("membership-example", "The `in` Keyword", "Ask whether something is in something else.", ["in", "membership"], [
         "You can ask Python whether something is inside something else using the `in` keyword.",

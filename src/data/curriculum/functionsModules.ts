@@ -105,21 +105,6 @@ export const functionsModules: Course = {
       "Keyword arguments can be passed in any order.",
       "Returning the result lets the caller use it rather than being forced to print it."
     ], "Write `compare_len(a, b='default')` that returns the longer of the two strings. Print `lion` for `compare_len('dog', b='lion')`.", "def compare_len(a, b='default'):\n    # Return the longer string using len().\n    pass\n\nprint(compare_len('dog', b='lion'))\n", ["lion"], ["def", "len", "return", "print"], [], 25),
-    code("relu-exercise", "The `relu` Function", "Write a real-world function used in machine learning.", ["functions", "if", "return"], [
-      "A rectified linear unit (relu) returns the input if it is positive, and `0` otherwise.",
-      "This function is used as an activation function in neural networks.",
-      "It is a good example of a function that takes one argument and returns one value."
-    ], "Write `relu(x)` so it returns `x` when positive and `0` otherwise. Print `relu(5)`, `relu(0)`, and `relu(-3)`.", "def relu(x):\n    # Return x if positive, 0 otherwise.\n    pass\n\nprint(relu(5))\nprint(relu(0))\nprint(relu(-3))\n", ["5", "0", "0"], ["def", "return", "print"], [], 25),
-    code("cb-sum-double", "Practice: `sum_double`", "Return a value that depends on a condition.", ["functions", "if", "return"], [
-      "Normally `sum_double(a, b)` returns `a + b`.",
-      "If the two values are equal, the function returns double their sum.",
-      "Original CodingBat problem: [CodingBat](https://codingbat.com/prob/p141905)."
-    ], "Define `sum_double(a, b)` so it returns `a + b`, but doubles the sum when `a == b`.", "def sum_double(a, b):\n    # Return a + b, but double the result if they are equal.\n    pass\n\nprint([sum_double(1, 2), sum_double(3, 2), sum_double(2, 2)])\n", ["[3, 5, 8]"], ["def sum_double", "return", "print"], [], 20),
-    code("cb-diff21", "Practice: `diff21`", "Use `abs` and a conditional return.", ["functions", "abs", "if"], [
-      "`diff21(n)` returns the absolute difference between `n` and `21`.",
-      "If `n` is greater than `21`, the function returns double that difference.",
-      "Original CodingBat problem: [CodingBat](https://codingbat.com/prob/p197466)."
-    ], "Define `diff21(n)` so it returns `abs(n - 21)`, doubled when `n > 21`.", "def diff21(n):\n    # Return abs(n - 21), doubled when n > 21.\n    pass\n\nprint([diff21(19), diff21(10), diff21(21), diff21(25)])\n", ["[2, 11, 0, 8]"], ["def diff21", "return", "print"], [], 20),
     code("cb-missing-char", "Practice: `missing_char`", "Use slicing inside a function to remove one character.", ["functions", "slicing", "strings"], [
       "`missing_char(s, n)` returns the string `s` with the character at index `n` removed.",
       "Use slicing to take everything before index `n` and everything after it.",
@@ -189,15 +174,5 @@ export const functionsModules: Course = {
       "Use `nums[0]` and `nums[-1]` — check them with two separate `if` statements.",
       "Original CodingBat problem: [CodingBat](https://codingbat.com/prob/p181624)."
       ], "Define `first_last6(nums)` so it returns `True` when the first or last element is `6`.", "def first_last6(nums):\n    # Check both ends of the list.\n    pass\n\nprint([first_last6([1, 2, 6]), first_last6([6, 1, 2, 3]), first_last6([1, 2, 3])])\n", ["[True, True, False]"], ["def first_last6", "return", "print"], [], 20),
-    code("cb-same-first-last", "Practice: `same_first_last`", "Guard a length check before indexing.", ["functions", "lists", "len"], [
-      "Write `same_first_last(nums)` that returns `True` when the list is non-empty and the first element equals the last.",
-      "Check `len(nums) >= 1` first to avoid an IndexError on an empty list.",
-      "Original CodingBat problem: [CodingBat](https://codingbat.com/prob/p179078)."
-    ], "Define `same_first_last(nums)` matching the description.", "def same_first_last(nums):\n    # Return False for empty lists, otherwise compare first and last.\n    pass\n\nprint([same_first_last([1, 2, 3]), same_first_last([1, 2, 3, 1]), same_first_last([1]), same_first_last([])])\n", ["[False, True, True, False]"], ["def same_first_last", "return", "print"], [], 20),
-    code("cb-common-end", "Practice: `common_end`", "Combine list indexing across two lists in a function.", ["functions", "lists", "indexing"], [
-      "Write `common_end(a, b)` that returns `True` when `a` and `b` share the same first element, or the same last element.",
-      "Both lists are guaranteed to have at least one element — check the two ends with separate `if` statements.",
-      "Original CodingBat problem: [CodingBat](https://codingbat.com/prob/p147755)."
-    ], "Define `common_end(a, b)` matching the description.", "def common_end(a, b):\n    # Compare the two possible matching ends.\n    pass\n\nprint([common_end([1, 2, 3], [7, 3]), common_end([1, 2, 3], [7, 3, 2]), common_end([1, 2], [1, 3])])\n", ["[True, False, True]"], ["def common_end", "return", "print"], [], 20),
   ],
 };
